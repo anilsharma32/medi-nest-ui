@@ -4,7 +4,7 @@ const { default: axios } = require("axios");
 const API_KEY=process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const axiosClient=axios.create({
-  baseURL:process.env.NEXT_PUBLIC_STRAPI_API_KEY,
+  baseURL:'https://cms-medi-nest-server.onrender.com/api',
   headers:{
     'Authorization':`Bearer ${API_KEY}`
   }
