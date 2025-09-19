@@ -5,6 +5,7 @@ const API_KEY=process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const axiosClient=axios.create({
   baseURL:'https://cms-medi-nest-server.onrender.com/api',
+  // baseURL:'http://localhost:1337/api',
   headers:{
     'Authorization':`Bearer ${API_KEY}`
   }
@@ -13,7 +14,7 @@ const axiosClient=axios.create({
 
 const getCategory=()=>axiosClient.get('/categories?populate=*');
 const getDoctorList=()=>axiosClient.get('/doctors?populate=*');
-const getDoctorByCategory=(category)=>axiosClient.get(`/doctors?filters[categories][Name][$in]=`+category+`&populate=*`);
+const getDoctorByCategory=(category)=>axiosClient.get(`/doctors?filters[categories][Name][$eqi]=${encodeURIComponent(category)}&populate=*`);
 const getDoctorById=(id)=>axiosClient.get(`/doctors/${id}?populate=*`); 
 
 
