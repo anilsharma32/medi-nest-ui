@@ -17,17 +17,17 @@ const Header = () => {
   const Menu = [
     {
       id: 1,
-      name: "Home",
+      name: "Features",
       path: "/"
     },
     {
       id: 2,
-      name: "Explore",
+      name: "Patients",
       path: "/explore"
     },
     {
       id: 3,
-      name: "Contact Us",
+      name: "Integrations",
       path: "/contact-us"
     }
   ]
@@ -42,7 +42,7 @@ const Header = () => {
 
 
   return (
-    <div className='flex items-center justify-between p-4 '> {/*shadow-sm*/}
+    <div className='sticky top-0 z-50 bg-white flex items-center justify-between p-4 '> {/*shadow-sm*/}
       <div className='flex items-center gap-10 '>
         {/* logoipsum.com */}
         <Link href="/">
